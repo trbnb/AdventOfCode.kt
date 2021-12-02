@@ -1,9 +1,10 @@
 package de.trbnb.adventofcode.y21.day2
 
+import de.trbnb.adventofcode.y21.resourceFile
 import java.io.File
 
 fun main() {
-    val (hSteps, vSteps) = File("C:\\Users\\Thorben\\Documents\\source\\personal\\AdventOfCode\\src\\main\\resources\\2021_two_one.txt")
+    val (hSteps, vSteps) = resourceFile("2021_two_one.txt")
         .readSteps()
         .partition { it.direction == Direction.FORWARD }
 

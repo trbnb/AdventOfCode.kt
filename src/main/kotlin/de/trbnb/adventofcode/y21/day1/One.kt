@@ -1,9 +1,9 @@
 package de.trbnb.adventofcode.y21.day1
 
-import java.io.File
+import de.trbnb.adventofcode.y21.resourceFile
 
 fun main() {
-    val numbers = File("C:\\Users\\Thorben\\Documents\\source\\personal\\AdventOfCode\\src\\main\\resources\\2021_one_one.txt")
+    val numbers = resourceFile("2021_one_one.txt")
         .readLines()
         .mapNotNull { it.toIntOrNull() }
 

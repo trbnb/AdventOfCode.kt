@@ -1,10 +1,9 @@
 package de.trbnb.adventofcode.y21.day2
 
-import java.io.File
+import de.trbnb.adventofcode.y21.resourceFile
 
 fun main() {
-    val steps = File("C:\\Users\\Thorben\\Documents\\source\\personal\\AdventOfCode\\src\\main\\resources\\2021_two_one.txt")
-        .readSteps()
+    val steps = resourceFile("2021_two_one.txt").readSteps()
 
     val result = steps.fold(Result(0, 0, 0)) { result, step ->
         when (step.direction) {
