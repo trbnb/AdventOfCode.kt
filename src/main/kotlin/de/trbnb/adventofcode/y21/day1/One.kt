@@ -10,6 +10,4 @@ fun main() {
     numbers.countIncrements().let(::println)
 }
 
-fun List<Int>.countIncrements() =
-    mapIndexedNotNull { index, i -> getOrNull(index + 1)?.let { i to it } }
-        .count { (first, second) -> second > first }
+fun List<Int>.countIncrements() = zipWithNext().count { (first, second) -> second > first }
