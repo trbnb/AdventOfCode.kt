@@ -18,10 +18,9 @@ fun main() {
                         .map { it to false }
                 }
         }
-        .mapNotNull {
-            var matrix = it
-            numbers.forEachIndexed { index, drawnNumber ->
-                matrix = matrix.map { line ->
+        .mapNotNull { initialMatrix ->
+            numbers.foldIndexed(initialMatrix) { index, matrix, drawnNumber ->
+                val newMatrix = matrix.map { line ->
                     line.map { numberField ->
                         when (numberField.first) {
                             drawnNumber -> drawnNumber to true
@@ -30,9 +29,11 @@ fun main() {
                     }
                 }
 
-                if (matrix.hasWon()) {
+                if (newMatrix.hasWon()) {
                     return@mapNotNull Triple(index, drawnNumber, matrix.score)
                 }
+
+                newMatrix
             }
             null
         }
