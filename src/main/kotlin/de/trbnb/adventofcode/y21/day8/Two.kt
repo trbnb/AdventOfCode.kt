@@ -49,8 +49,7 @@ fun String.readDigit(segment: Segment) = when (length) {
     6 -> when {
         segment.topRight in this && segment.center in this -> '9'
         segment.topRight in this && segment.bottomLeft in this -> '0'
-        segment.center in this && segment.bottomLeft in this -> '6'
-        else -> throw IllegalArgumentException(this)
+        else -> '6'
     }
     5 -> when {
         segment.bottomLeft in this -> '2'
