@@ -1,9 +1,9 @@
 package de.trbnb.adventofcode.y21.day2
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
-    val steps = resourceFile("2021_two_one.txt").readSteps()
+    val steps = input().readSteps()
 
     val result = steps.fold(Result(0, 0, 0)) { result, step ->
         when (step.direction) {

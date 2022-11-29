@@ -1,10 +1,9 @@
 package de.trbnb.adventofcode.y21.day8
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
-    resourceFile("2021_eight.txt")
-        .readLines()
+    input()
         .map { it.replace("| ", "") }
         .map { line -> line.split(" ").map { it.toList().sorted().string() } }
         .map { line ->

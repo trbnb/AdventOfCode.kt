@@ -1,10 +1,10 @@
 package de.trbnb.adventofcode.y21.day5
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 import kotlin.math.absoluteValue
 
 fun main() {
-    resourceFile("2021_five.txt").readLines()
+    input()
         .map { line ->
             line.split("->")
                 .map { coordinates ->

@@ -1,10 +1,9 @@
 package de.trbnb.adventofcode.y21.day2
 
-import de.trbnb.adventofcode.y21.resourceFile
-import java.io.File
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
-    val (hSteps, vSteps) = resourceFile("2021_two_one.txt")
+    val (hSteps, vSteps) = input()
         .readSteps()
         .partition { it.direction == Direction.FORWARD }
 
@@ -26,9 +25,7 @@ enum class Direction {
 
 data class Step(val direction: Direction, val factor: Int)
 
-fun File.readSteps() =
-    readLines()
-    .map { line ->
-        val (direction, factor) = line.split(" ")
-        Step(Direction.values().first { it.name.equals(direction, ignoreCase = true) }, factor.toInt())
-    }
+fun List<String>.readSteps() = map { line ->
+    val (direction, factor) = line.split(" ")
+    Step(Direction.values().first { it.name.equals(direction, ignoreCase = true) }, factor.toInt())
+}

@@ -1,9 +1,9 @@
 package de.trbnb.adventofcode.y21.day4
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
-    val lines = resourceFile("2021_four.txt").readLines()
+    val lines = input()
 
     val numbers = lines.first().split(",").map(String::toInt)
 

@@ -1,10 +1,9 @@
 package de.trbnb.adventofcode.y21.day6
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
-    val initial = resourceFile("2021_six.txt")
-        .readLines()
+    val initial = input()
         .first()
         .split(",")
         .map { it.toInt() }

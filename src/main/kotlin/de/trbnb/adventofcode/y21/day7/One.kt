@@ -1,6 +1,6 @@
 package de.trbnb.adventofcode.y21.day7
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
     fun calcFuel(crabs: List<Int>, alignPosition: Int): Int {
@@ -14,8 +14,7 @@ fun main() {
             .minOf { it.value }
     }
 
-    val crabs = resourceFile("2021_seven.txt")
-        .readLines()
+    val crabs = input()
         .first()
         .split(",")
         .map(String::toInt)

@@ -1,9 +1,9 @@
 package de.trbnb.adventofcode.y21.day3
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
-    resourceFile("2021_three_one.txt").readLines()
+    input()
         .map(String::toList)
         .rotate { it == '1' }
         .map { column -> mapOf(false to column.count { !it }, true to column.count { it }) }

@@ -1,11 +1,10 @@
 package de.trbnb.adventofcode.y21.day6
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
     (1..256).fold(
-        resourceFile("2021_six.txt")
-            .readText()
+        input().joinToString(separator = "\n")
             .trim()
             .split(",")
             .map(String::toInt)

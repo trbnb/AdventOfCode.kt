@@ -1,9 +1,9 @@
 package de.trbnb.adventofcode.y21.day3
 
-import de.trbnb.adventofcode.y21.resourceFile
+import de.trbnb.adventofcode.utils.input
 
 fun main() {
-    resourceFile("2021_three_one.txt").readLines()
+    input()
         .map { line -> line.map { it == '1' } }
         .let { lines -> findExtreme(lines, true) to findExtreme(lines, false) }
         .let { (first, second) -> first * second }
